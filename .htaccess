@@ -1,0 +1,7 @@
+# Increase upload limits so video files can be uploaded to the portfolio system.
+# If your Apache is configured to ignore these (php_value not permitted), edit
+# php.ini directly instead — see README.md "Enabling Video Uploads".
+php_value upload_max_filesize 50M
+php_value post_max_size 55M
+php_value max_execution_time 300
+php_value max_input_time 300

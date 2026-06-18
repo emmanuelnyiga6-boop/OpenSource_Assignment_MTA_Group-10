@@ -1,0 +1,241 @@
+/* ===== Digital Portfolio Management System ===== */
+/* Color palette inspired by professional ed-tech UI */
+
+:root {
+    --navy: #0c2d57;
+    --navy-light: #123a73;
+    --blue: #1f8fe0;
+    --blue-soft: #eaf6fd;
+    --yellow: #ffcb05;
+    --yellow-dark: #f0b400;
+    --text-dark: #1b2733;
+    --gray: #62707d;
+    --white: #ffffff;
+    --radius: 14px;
+    --shadow: 0 6px 18px rgba(12, 45, 87, 0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { min-height: 100%; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--blue-soft);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+
+.navbar .logo { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.3px; }
+.navbar .logo span { color: var(--yellow); }
+
+.navbar ul { list-style: none; display: flex; align-items: center; gap: 26px; }
+.navbar ul li { margin-left: 26px; }
+.navbar ul li:first-child { margin-left: 0; }
+.navbar ul li a {
+    color: #dce8f7;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+.navbar ul li a:hover { color: var(--yellow); }
+.navbar ul li a.nav-pill {
+    background: var(--yellow);
+    color: var(--navy);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.navbar ul li a.nav-pill:hover { background: var(--yellow-dark); color: var(--navy); }
+
+/* ===== Main content area (grows to push footer down) ===== */
+.container { max-width: 1080px; margin: 0 auto; padding: 40px 20px; flex: 1 0 auto; width: 100%; }
+
+/* ===== Hero banner (dashboard welcome) ===== */
+.hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 50px 45px;
+    margin-bottom: 35px;
+    box-shadow: var(--shadow);
+}
+.hero h1 { font-size: 2.1rem; font-weight: 800; margin-bottom: 10px; }
+.hero p { color: #cfe0f5; font-size: 1.05rem; margin-bottom: 22px; max-width: 520px; }
+
+/* ===== Page titles (non-hero pages) ===== */
+h2.page-title {
+    color: var(--navy);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--yellow);
+    display: inline-block;
+}
+
+/* ===== Buttons ===== */
+.btn-yellow, .form-card button, .btn {
+    background: var(--yellow);
+    color: var(--navy);
+    border: none;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.15s;
+}
+.btn-yellow:hover, .form-card button:hover, .btn:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-1px);
+}
+
+/* ===== Forms (Login / Register / Add / Edit) ===== */
+.form-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 460px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 5px solid var(--yellow);
+}
+
+.form-card label { font-weight: 600; margin-top: 12px; color: var(--navy); font-size: 0.92rem; }
+
+.form-card input, .form-card select, .form-card textarea {
+    padding: 10px 12px;
+    border: 1px solid #d7e1ec;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9fbfd;
+}
+.form-card input:focus, .form-card select:focus, .form-card textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: #fff;
+}
+
+.form-card button { margin-top: 22px; width: 100%; }
+
+/* Generic centered page wrapper (used for Add New Portfolio) */
+.center-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+/* Centered auth pages (Login / Register) */
+.auth-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+}
+.auth-page h2 {
+    color: var(--navy);
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.auth-page .auth-subtitle { color: var(--gray); margin-bottom: 24px; }
+.auth-page p { margin-top: 18px; color: var(--gray); }
+.auth-page p a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.auth-page p a:hover { text-decoration: underline; }
+
+/* ===== Search ===== */
+.search-form { flex-direction: row; max-width: 600px; border-top: none; padding: 8px; gap: 0; }
+.search-form input { flex: 1; border-radius: 8px 0 0 8px; }
+.search-form button { margin-top: 0; margin-left: -1px; border-radius: 0 8px 8px 0; width: auto; padding: 12px 24px; }
+
+/* ===== Portfolio grid & cards ===== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.portfolio-card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 10px 24px rgba(12,45,87,0.16); }
+
+.portfolio-card img, .portfolio-card video {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    background: #000;
+}
+
+.portfolio-card .card-body { padding: 18px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex: 1; }
+
+.portfolio-card h3 { color: var(--navy); font-size: 1.1rem; }
+
+.portfolio-card .tag {
+    display: inline-block;
+    background: var(--blue-soft);
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.portfolio-card p { color: var(--gray); font-size: 0.92rem; }
+
+.card-actions { margin-top: auto; padding-top: 10px; display: flex; gap: 16px; border-top: 1px solid #eef2f6; }
+.card-actions a { color: var(--blue); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-right: 16px; }
+.card-actions a:last-child { margin-right: 0; }
+.card-actions a:hover { text-decoration: underline; }
+
+/* ===== Alerts ===== */
+.alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 18px; font-size: 0.92rem; max-width: 460px; }
+.alert.error { background: #fde8e8; color: #9b1c1c; border-left: 4px solid #e02424; }
+.alert.success { background: #e6f7ec; color: #146c43; border-left: 4px solid #1f9d55; }
+
+/* ===== Footer (pinned to bottom via flex parent) ===== */
+footer {
+    background: var(--navy);
+    color: #cfe0f5;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
